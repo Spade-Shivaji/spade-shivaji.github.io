@@ -168,18 +168,40 @@
         .workshop-card-content .skills-list li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--white); }
         .workshop-card-content .skills-list li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: var(--primary-light-color); }
 
-        /* Scroll Animations & Responsive */
+        /* Scroll Animations */
         .fade-in-up { opacity: 0; transform: translateY(40px); transition: opacity var(--transition-slow), transform var(--transition-slow); }
         .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+        
+        /* --- RESPONSIVE STYLES --- */
         @media (max-width: 768px) {
             .nav-toggle { display: flex; cursor: pointer; flex-direction: column; gap: 5px; z-index: 1100; }
             .nav-toggle span { width: 25px; height: 3px; background: var(--text-color); transition: all var(--transition-fast); }
             .nav { position: absolute; top: 100%; left: 0; width: 100%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
             .nav.active { max-height: 500px; }
             .nav-list { flex-direction: column; } .nav-link { padding: 1rem 1.5rem; text-align: center; }
-            .section { padding: 60px 0; } .section-title { font-size: 2rem; margin-bottom: 3rem; }
-            .seminar-entry, .seminar-entry:nth-child(even) { grid-template-columns: 1fr; }
+            
+            .section { padding: 60px 0; } 
+            .section-title { font-size: 2rem; margin-bottom: 3rem; }
+            
+            /* Stacking seminar content vertically */
+            .seminar-entry, .seminar-entry:nth-child(even) { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 4rem; }
             .seminar-entry:nth-child(even) .seminar-details, .seminar-entry:nth-child(even) .seminar-gallery { grid-column: 1; grid-row: auto; }
+            
+            /* Stacking images within the gallery */
+            .seminar-gallery { grid-template-columns: 1fr; gap: 0.75rem; }
+
+            /* Responsive typography for seminar titles */
+            .seminar-details h3 { font-size: 1.5rem; }
+
+            /* Responsive workshop card padding and titles */
+            .workshop-card-content { padding: 1.5rem; }
+            .workshop-card-content h3 { font-size: 1.3rem; }
+            .workshop-grid { grid-template-columns: 1fr; } /* Ensures cards stack nicely */
+
+            /* Tweak page header height */
+            .page-header, .page-divider-container, .page-divider-container .waves, .page-divider-container .wave {
+                height: 100px;
+            }
         }
     </style>
 </head>
@@ -232,9 +254,9 @@
                         <p class="speaker-info">Featuring: Dr. Srishti Sharma, Founder of Shakti Wearables</p>
                     </div>
                     <div class="seminar-gallery">
-                        <div class="gallery-img"><img src="https://placehold.co/600x300/011638/D1DEDE?text=Main+Event+Photo" alt="Placeholder main"></div>
-                        <div class="gallery-img"><img src="https://placehold.co/300x200/011638/D1DEDE?text=Seminar+Photo" alt="Placeholder 2"></div>
-                        <div class="gallery-img"><img src="https://placehold.co/300x200/011638/D1DEDE?text=Seminar+Photo" alt="Placeholder 3"></div>
+                        <div class="gallery-img"><img src="https://placehold.co/600x300/011638/D1DEDE?text=Future+of+Work+Webinar" alt="Future of Work Webinar"></div>
+                        <div class="gallery-img"><img src="https://placehold.co/300x200/011638/D1DEDE?text=Seminar+Photo" alt="Seminar Photo 1"></div>
+                        <div class="gallery-img"><img src="https://placehold.co/300x200/011638/D1DEDE?text=Seminar+Photo" alt="Seminar Photo 2"></div>
                     </div>
                 </div>
 
@@ -245,9 +267,9 @@
                         <p class="speaker-info">Featuring: Mr. Nikhil Gaur, Founder of Hive School</p>
                     </div>
                     <div class="seminar-gallery">
-                        <div class="gallery-img"><img src="https://placehold.co/600x300/646E68/FFFFFF?text=Main+Seminar+Photo" alt="Placeholder main"></div>
-                        <div class="gallery-img"><img src="https://placehold.co/300x200/646E68/FFFFFF?text=Audience+Photo" alt="Placeholder 2"></div>
-                        <div class="gallery-img"><img src="https://placehold.co/300x200/646E68/FFFFFF?text=Speaker+Photo" alt="Placeholder 3"></div>
+                        <div class="gallery-img"><img src="https://placehold.co/600x300/646E68/FFFFFF?text=Digital+Divide+Seminar" alt="Digital Divide Seminar"></div>
+                        <div class="gallery-img"><img src="https://placehold.co/300x200/646E68/FFFFFF?text=Audience+Photo" alt="Audience Photo"></div>
+                        <div class="gallery-img"><img src="https://placehold.co/300x200/646E68/FFFFFF?text=Speaker+Photo" alt="Speaker Photo"></div>
                     </div>
                 </div>
 
