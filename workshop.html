@@ -124,13 +124,20 @@
         @keyframes animate-shapes { 0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; } 100% { transform: translateY(-1200px) rotate(720deg); opacity: 0; border-radius: 50%; } }
 
         /* --- NEW THEME STYLES --- */
-        .seminars-section { padding-top: 50px; background-color: var(--background-light); }
+        .seminars-section { 
+            padding-top: 50px; 
+            background-color: var(--background-light); 
+            padding-bottom: 0; /* FIX: Remove bottom padding to close gap above wave */
+        }
         .seminar-entry {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 3rem;
             align-items: center;
             margin-bottom: 5rem;
+        }
+        .seminar-entry:last-child {
+            margin-bottom: 0; /* Ensure no extra margin at the very end */
         }
         .seminar-entry:nth-child(even) .seminar-details { grid-column: 2; }
         .seminar-entry:nth-child(even) .seminar-gallery { grid-column: 1; grid-row: 1; }
@@ -142,9 +149,17 @@
         .gallery-img:first-child { grid-column: 1 / -1; }
         .gallery-img:first-child img { height: 250px; }
 
-        .wave-divider { padding: 0; line-height: 0; }
+        .wave-divider { 
+            padding: 0; 
+            line-height: 0; 
+            /* Added to fix potential Safari rendering bug */
+            margin-top: -1px; 
+        }
         
-        .workshops-section { background: linear-gradient(135deg, var(--background-dark) 0%, var(--text-color) 100%); }
+        .workshops-section { 
+            background: linear-gradient(135deg, var(--background-dark) 0%, var(--text-color) 100%);
+            padding-top: 0; /* FIX: Remove top padding to close gap below wave */
+        }
         .workshop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; position: relative; z-index: 2; }
         .workshop-card {
             background: rgba(209, 222, 222, 0.1);
