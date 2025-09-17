@@ -326,10 +326,12 @@
             box-shadow: var(--shadow-light);
         }
         .docu-thumbnail img {
-            width: 100%;
+            width: 300px; /* Set your desired width */
+            height: 200px; /* Set your desired height */
+            object-fit: cover; /* This ensures the image covers the area without distortion */
             display: block;
             transition: transform 0.4s ease;
-        }
+         }
         .docu-thumbnail:hover img {
             transform: scale(1.05);
         }
@@ -605,6 +607,7 @@
 </body>
 
 </html>
+
 
 
 
