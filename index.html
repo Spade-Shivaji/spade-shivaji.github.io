@@ -944,9 +944,20 @@
             const heroTitle = document.querySelector('.hero-title');
 
             // --- Preloader ---
-            window.addEventListener('load', () => {
-                preloader.classList.add('fade-out');
-            });
+            // --- AFTER (The Solution) ---
+            document.addEventListener('DOMContentLoaded', () => {
+            const preloader = document.getElementById('preloader');
+            const header = document.getElementById('header');
+            // ... other constants ...
+
+            // --- Preloader ---
+            // This now runs as soon as the HTML is ready, without waiting for images.
+            // We added a small delay to ensure the animation is smooth.
+            setTimeout(() => {
+            if (preloader) {
+            preloader.classList.add('fade-out');
+            }
+            }, 200); // 200ms delay, you can adjust this
 
             // --- Animate Hero Title ---
             if (heroTitle) {
@@ -1052,6 +1063,7 @@
 </body>
 
 </html>
+
 
 
 
