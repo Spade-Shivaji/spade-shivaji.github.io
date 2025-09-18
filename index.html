@@ -617,7 +617,11 @@
         }
     </style>
 </head>
-
+<script>
+    window.onload = function() {
+        window.location.href = "index#home";
+    };
+</script>
 <body>
     <div class="preloader" id="preloader">
         <div class="preloader-text">
@@ -731,7 +735,7 @@
                         </div>
                         <h3>Documentary</h3>
                         <p>We organize multiple online and offline events, engaging over 10,000 students and collaborating with 300+ societies from Delhi University, IIMs, and beyond.</p>
-                        <br><a href="documentary"><span class="tag">See More</span></a>
+                        <br><a href="documentary.html"><span class="tag">See More</span></a>
                     </div>
                     <div class="about-card stagger-item" style="transition-delay: 0.3s;">
                         <div class="about-icon">
@@ -741,7 +745,7 @@
                         </div>
                         <h3>Tatva</h3>
                         <p>We have produced 5 thought-provoking documentaries on urgent economic issues, with our 6th currently in production, aiming to spark conversations and inspire change.</p>
-                         <br><a href="tatva"><span class="tag">Show more</span></a>
+                         <br><a href="tatva.html"><span class="tag">Show more</span></a>
                     </div>
                     <div class="about-card stagger-item" style="transition-delay: 0.5s;">
                         <div class="about-icon">
@@ -762,19 +766,19 @@
                 <div class="pub-grid stagger-children">
                     <div class="pub-card stagger-item" style="transition-delay: 0.1s;">
                         <div class="pub-img-container"><img src="images/aos.jpeg" alt="ace of spade"></div>
-                        <a href="aceofspade"><span class="tag">know more</span></a>
+                        <a href="aceofspade.html"><span class="tag">know more</span></a>
                         <h3>Ace of Spade</h3>
                         <p>Our annual magazine, Tatva, is a thoughtful compilation of ideas and perspectives. The latest edition explores Neuroeconomics, featuring 21 research articles from students across 20 institutions.</p>
                     </div>
                     <div class="pub-card stagger-item" style="transition-delay: 0.3s;">
                         <div class="pub-img-container"><img src="https://via.placeholder.com/300x400/8b7bd8/FFFFFF?text=Arthamanthan+Book" alt="Arthamanthan Research Book Cover"></div>
-                        <a href="workshop#workshops"><span class="tag">know more</span></a>
+                        <a href=""><span class="tag">know more</span></a>
                         <h3>Workshops</h3>
                         <p>Our esteemed annual research book, "Arthamanthan," features a diverse collection of research papers on various socio-economic issues in India and has earned an ISBN for the past two years.</p>
                     </div>
                     <div class="pub-card stagger-item" style="transition-delay: 0.5s;">
                         <div class="pub-img-container"><img src="https://via.placeholder.com/300x400/8b7bd8/FFFFFF?text=Gig+Economy+Doc" alt="Documentary Poster"></div>
-                        <a href="workshop#seminars"><span class="tag">Know more</span></a>
+                        <a href=""><span class="tag">Know more</span></a>
                         <h3>Seminars</h3>
                         <p>Our latest documentary explores how short-term, freelance, and contract work is reshaping employment, featuring interviews with eminent personalities and experts.</p>
                     </div>
@@ -930,21 +934,19 @@
     </footer>
 
     <script>
-           // --- Preloader ---
-            // --- AFTER (The Solution) ---
-            document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const preloader = document.getElementById('preloader');
             const header = document.getElementById('header');
-            // ... other constants ...
+            const scrollProgress = document.getElementById('scroll-progress');
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const heroTitle = document.querySelector('.hero-title');
 
             // --- Preloader ---
-            // This now runs as soon as the HTML is ready, without waiting for images.
-            // We added a small delay to ensure the animation is smooth.
-            setTimeout(() => {
-            if (preloader) {
-            preloader.classList.add('fade-out');
-            }
-            }, 200); // 200ms delay, you can adjust this
+            window.addEventListener('load', () => {
+                preloader.classList.add('fade-out');
+            });
 
             // --- Animate Hero Title ---
             if (heroTitle) {
@@ -1050,11 +1052,5 @@
 </body>
 
 </html>
-
-
-
-
-
-
 
 
