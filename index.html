@@ -204,14 +204,15 @@
             gap: 2.5rem;
         }
 
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            position: relative;
-            padding: 5px 0;
-            transition: color var(--transition-fast);
-        }
+       .nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    position: relative;
+    padding: 5px 6px;
+    transition: color var(--transition-fast);
+    white-space: nowrap;
+}
 
         .nav-link::before {
             content: '';
@@ -556,11 +557,9 @@
         .contact-card p, .contact-card a { margin: 0.5rem 0; color: var(--white); text-decoration: none; opacity: 0.8; font-size: 1rem; }
         .contact-card a:hover { text-decoration: underline; opacity: 1; }
 
-        /* Social Links */
-        .social-links { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; position: relative; z-index: 2; }
-        .social-link { color: var(--white); font-size: 1.5rem; text-decoration: none; padding: 1rem; border-radius: 50%; background: rgba(209, 222, 222, 0.1); backdrop-filter: blur(5px); transition: all var(--transition-fast); border: 1px solid rgba(209, 222, 222, 0.1); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
-        .social-link:hover { transform: scale(1.1) rotate(10deg); background: var(--primary-color); box-shadow: 0 8px 20px rgba(100, 110, 104, 0.4); }
-
+/* Social Links */
+.social-links { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; position: absolute; z-index: 2; margin-left: 500px; top: 500px; }.social-link { color: var(--white); font-size: 1.5rem; text-decoration: none; padding: 1rem; border-radius: 50%; background: rgba(209, 222, 222, 0.1); backdrop-filter: blur(5px); transition: all var(--transition-fast); border: 1px solid rgba(209, 222, 222, 0.1); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
+.social-link:hover { transform: scale(1.1) rotate(10deg); background: var(--primary-color); box-shadow: 0 8px 20px rgba(100, 110, 104, 0.4); }
         /* Footer */
         .footer { text-align: center; padding: 2rem; background: var(--background-dark); color: #aaa; font-size: 0.9rem; }
 
@@ -636,10 +635,11 @@
                 <ul class="nav-list">
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="gallery" class="nav-link">Our Team</a></li>
+                    <li><a href="photos" class="nav-link">Gallery</a></li>
                     <li><a href="events" class="nav-link">Our Events</a></li>
                     <li><a href="documentary" class="nav-link">Documentary</a></li>
                     <li><a href="tatva" class="nav-link">Tatva</a></li>
-                    <li><a href="newsletter" class="nav-link">Newsletter</a></li>
+                    <li><a href="newsletter" class="nav-link">Our Publications</a></li>
                     <li><a href="#speakers" class="nav-link">Speakers</a></li>
                     <li><a href="#sponsors" class="nav-link">Sponsors</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -654,63 +654,56 @@
     </header>
 
     <main>
-        <section class="section hero" id="home">
-            <ul class="animated-shapes">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <div class="container hero-container">
-                <div class="hero-content fade-in-up">
-                    <h1 class="hero-title">Society for Practical Applications & Development of Economics</h1>
-                    <svg class="hero-subtitle-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="xMidYMid meet" style="width: 100%; max-width: 500px; height: auto;">
-                        <defs>
-                            <linearGradient id="gradientText" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color: #D1DEDE; stop-opacity: 1;" />
-                                <stop offset="50%" style="stop-color: #b7eaea; stop-opacity: 1;" />
-                                <stop offset="100%" style="stop-color: #adedeD; stop-opacity: 1;" />
-                            </linearGradient>
-                            <filter id="glowEffect" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-                                <feMerge>
-                                    <feMergeNode in="blur" />
-                                    <feMergeNode in="SourceGraphic" />
-                                </feMerge>
-                            </filter>
-                        </defs>
-                        <text x="50%" y="40%" text-anchor="middle" dominant-baseline="middle" font-family="Poppins, sans-serif" font-size="40" fill="url(#gradientText)" filter="url(#glowEffect)">
-                            Developing Economics, 
-                        </text>
-                        <text x="50%" y="76%" text-anchor="middle" dominant-baseline="middle" font-family="Poppins, sans-serif" font-size="40" fill="url(#gradientText)" filter="url(#glowEffect)">
-                            Elevating Research
-                        </text>
-                    </svg>
-                    <a href="#about" class="btn btn-primary">Discover More</a>
-                   
-                </div>
-                <div class="hero-image slide-in-right">
-                    <img src="images/spadeteam.JPEG" alt="SPADE Team Photo">
-                </div>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/spade.shivaji" target="_blank" class="social-link" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/spadeshivaji" target="_blank" class="social-link" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.youtube.com/@spadeshivaji9834" target="_blank" class="social-link" aria-label="Subscribe to our YouTube channel"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="hero-divider-container">
-                <div class="waves">
-                    <div class="wave wave1"></div>
-                    <div class="wave wave2"></div>
-                </div>
-            </div>
-        </section>
+       <section class="section hero" id="home">
+    <ul class="animated-shapes">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="container hero-container">
+        <div class="hero-content fade-in-up">
+            <h1 class="hero-title">Society for Practical Applications & Development of Economics</h1>
+            <svg class="hero-subtitle-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="xMidYMid meet" style="width: 100%; max-width: 500px; height: auto;">
+                <defs>
+                    <linearGradient id="gradientText" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color: #D1DEDE; stop-opacity: 1;" />
+                        <stop offset="50%" style="stop-color: #b7eaea; stop-opacity: 1;" />
+                        <stop offset="100%" style="stop-color: #adedeD; stop-opacity: 1;" />
+                    </linearGradient>
+                    <filter id="glowEffect" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+                <text x="50%" y="40%" text-anchor="middle" dominant-baseline="middle" font-family="Poppins, sans-serif" font-size="40" fill="url(#gradientText)" filter="url(#glowEffect)">
+                    Developing Economics, 
+                </text>
+                <text x="50%" y="76%" text-anchor="middle" dominant-baseline="middle" font-family="Poppins, sans-serif" font-size="40" fill="url(#gradientText)" filter="url(#glowEffect)">
+                    Elevating Research
+                </text>
+            </svg>
+            <a href="#about" class="btn btn-primary">Discover More</a>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/spade.shivaji" target="_blank" class="social-link" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/spadeshivaji" target="_blank" class="social-link" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://youtube.com/@spade.shivaji?si=Az8GZoaI0RdeEmbn" target="_blank" class="social-link" aria-label="Subscribe to our YouTube channel"><i class="fab fa-youtube"></i></a>            </div>
+        </div>
+        <div class="hero-image slide-in-right">
+            <img src="images/spadeteam.JPEG" alt="SPADE Team Photo">
+        </div>
+    </div>
+</section>
 
         <section class="section about" id="about">
             <div class="container">
@@ -779,13 +772,13 @@
                             and other exciting inter-college contests. All of this comes together in a vibrant celebration of creativity, innovation, and teamwork, making Ace of Spade an unforgettable experience for everyone.</p>
                     </div>
                     <div class="pub-card stagger-item" style="transition-delay: 0.3s;">
-                        <div class="pub-img-container"><img src="images/WORKSHOPS.jpg" alt="Seminars"></div>
+                        <div class="pub-img-container"><img src="images/Workshops.jpg" alt="Seminars"></div>
                         <a href="workshop#workshops"><span class="tag">know more</span></a>
                         <h3>Workshops</h3>
                         <p>SPADE organizes practical and skill building workshops that empower students with hands on knowledge and industry insights. The workshops are based on topics from data analysis and research writing to career strategies and digital marketing. These sessions provide students with skills, expert guidance, and opportunities to enhance both academic and professional growth.</p>
                     </div>
                     <div class="pub-card stagger-item" style="transition-delay: 0.5s;">
-                        <div class="pub-img-container"><img src="images/SEMINARS.jpg" alt="Workshops"></div>
+                        <div class="pub-img-container"><img src="images/Seminars.jpg" alt="Workshops"></div>
                         <a href="workshop#seminars"><span class="tag">Know more</span></a>
                         <h3>Seminars</h3>
                         <p>Our seminars provide interactive workshops with experts, exploring evolving job trends like freelancing and short-term projects. Through interviews and knowledge sharing, these sessions highlight future directions in the workforce while giving students valuable learning experiences from some of the best in the field.</p>
@@ -1059,6 +1052,38 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
